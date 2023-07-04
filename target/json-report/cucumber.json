@@ -1,0 +1,129 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 2942935300,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I launched pulsepoint application",
+            "match": {
+              "location": "stepdefs.QALoginStepDefs.i_launched_pulsepoint_application()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2023-07-04T23:00:17.875Z",
+        "before": [
+          {
+            "result": {
+              "duration": 7226200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "frameworkutils.ScenarioHooks.beforeEachScenario(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "line": 8,
+        "name": "[QA_Login_01] Verify QA Login Functionality",
+        "description": "",
+        "id": "testing-hackathon---testing-warriors;[qa-login-01]-verify-qa-login-functionality",
+        "after": [
+          {
+            "result": {
+              "duration": 253661000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "frameworkutils.ScenarioHooks.afterEachScenario(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 309693200,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I enter userName and password in QA demo",
+            "match": {
+              "location": "stepdefs.QALoginStepDefs.iEnterUserNameAndPasswordInQADemo()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 4600268800,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I clicked on login button",
+            "match": {
+              "location": "stepdefs.QALoginStepDefs.iClickedOnLoginButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 121760800,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "I assert that login was successful",
+            "match": {
+              "location": "stepdefs.QALoginStepDefs.iAssertThatLoginWasSuccessful()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Admin"
+          },
+          {
+            "name": "@Regression"
+          },
+          {
+            "name": "@Sanity"
+          },
+          {
+            "name": "@BasicSanity"
+          },
+          {
+            "name": "@T"
+          }
+        ]
+      }
+    ],
+    "name": "TESTING HACKATHON - TESTING WARRIORS",
+    "description": "",
+    "id": "testing-hackathon---testing-warriors",
+    "keyword": "Feature",
+    "uri": "file:src/test/java/features/QALogin.feature",
+    "tags": [
+      {
+        "name": "@Admin",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]
