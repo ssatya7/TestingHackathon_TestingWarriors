@@ -72,6 +72,7 @@ test {
     ignoreFailures = true
     useTestNG {
         useDefaultListeners = true
-        suites 'src/test/test_suites/'+System.getenv("TestSuite")+'.xml'
+        //suites 'src/test/test_suites/'+System.getenv("TestSuite")+'.xml'
+        suites 'src/test/test_suites/testrun.xml'
     }
 }
