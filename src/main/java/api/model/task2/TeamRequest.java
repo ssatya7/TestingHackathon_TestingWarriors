@@ -3,22 +3,22 @@ package api.model.task2;
 import java.util.ArrayList;
 
 public class TeamRequest {
-    private ArrayList<String> years;
+    private String years;
     private String teamName;
 
     public  TeamRequest(){
 
     }
-    public TeamRequest(ArrayList<String> years, String teamName) {
+    public TeamRequest(String years, String teamName) {
         this.years = years;
         this.teamName = teamName;
     }
 
-    public ArrayList<String> getYears() {
+    public String getYears() {
         return years;
     }
 
-    public void setYears(ArrayList<String> years) {
+    public void setYears(String years) {
         this.years = years;
     }
 
