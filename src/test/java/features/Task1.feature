@@ -11,3 +11,4 @@ Feature: TESTING HACKATHON - TESTING WARRIORS
     And User select batters Checkbox
     And User select Most Fours Value
     And I fetch the data from stats for UI Screen
+    And I get player name from post request

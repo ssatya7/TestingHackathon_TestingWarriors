@@ -1,20 +1,20 @@
+
 package api.model.task1;
 
 public class Players {
 
     private String playerName;
-    private int matchesPlayed;
-    private int rusScored;
-    private double average;
-    private double strikeRate;
-    private int hundredsScored;
-    private int fiftiesScored;
+    private String matchesPlayed;
+    private String rusScored;
+    private String average;
+    private String strikeRate;
+    private String hundredsScored;
+    private String fiftiesScored;
 
-    public Players(){
-
+    public Players() {
     }
 
-    public Players(String playerName, int matchesPlayed, int rusScored, double average, double strikeRate, int hundredsScored, int fiftiesScored) {
+    public Players(String playerName, String matchesPlayed, String rusScored, String average, String strikeRate, String hundredsScored, String fiftiesScored) {
         this.playerName = playerName;
         this.matchesPlayed = matchesPlayed;
         this.rusScored = rusScored;
@@ -32,51 +32,51 @@ public class Players {
         this.playerName = playerName;
     }
 
-    public int getMatchesPlayed() {
+    public String getMatchesPlayed() {
         return matchesPlayed;
     }
 
-    public void setMatchesPlayed(int matchesPlayed) {
+    public void setMatchesPlayed(String matchesPlayed) {
         this.matchesPlayed = matchesPlayed;
     }
 
-    public int getRusScored() {
+    public String getRusScored() {
         return rusScored;
     }
 
-    public void setRusScored(int rusScored) {
+    public void setRusScored(String rusScored) {
         this.rusScored = rusScored;
     }
 
-    public double getAverage() {
+    public String getAverage() {
         return average;
     }
 
-    public void setAverage(double average) {
+    public void setAverage(String average) {
         this.average = average;
     }
 
-    public double getStrikeRate() {
+    public String getStrikeRate() {
         return strikeRate;
     }
 
-    public void setStrikeRate(double strikeRate) {
+    public void setStrikeRate(String strikeRate) {
         this.strikeRate = strikeRate;
     }
 
-    public int getHundredsScored() {
+    public String getHundredsScored() {
         return hundredsScored;
     }
 
-    public void setHundredsScored(int hundredsScored) {
+    public void setHundredsScored(String hundredsScored) {
         this.hundredsScored = hundredsScored;
     }
 
-    public int getFiftiesScored() {
+    public String getFiftiesScored() {
         return fiftiesScored;
     }
 
-    public void setFiftiesScored(int fiftiesScored) {
+    public void setFiftiesScored(String fiftiesScored) {
         this.fiftiesScored = fiftiesScored;
     }
 }

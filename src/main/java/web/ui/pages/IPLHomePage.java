@@ -38,7 +38,7 @@ public class IPLHomePage extends BasePage {
     }
 
     public void userSelectCSBListValue(String cSBListValue) {
-        iplHomePageElements.userSelectCSBListValue(cSBListValue).click();
+        iplHomePageElements.userSelectCSBListValue(cSBListValue).scrollIntoView(true).click();
     }
 
     public List<Players> getPlayerStats() {

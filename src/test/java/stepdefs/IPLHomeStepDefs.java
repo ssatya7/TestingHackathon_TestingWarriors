@@ -1,5 +1,7 @@
 package stepdefs;
 
+import api.model.task1.Players;
+import api.task1.PostRequest;
 import com.codeborne.selenide.testng.ScreenShooter;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -7,20 +9,19 @@ import org.testng.Assert;
 import org.testng.annotations.Listeners;
 
 import java.awt.*;
+import java.util.ArrayList;
+
+import static com.codeborne.selenide.Selenide.open;
 
 @Listeners({ScreenShooter.class})
 public class IPLHomeStepDefs {
 
-  //  LoginPageLogger loginPage;
+    PostRequest postRequest;
+    ArrayList<Players> playersList;
     private final web.ui.pages.IPLHomePage IplHomePage;
 
     public IPLHomeStepDefs(web.ui.pages.IPLHomePage qaLoginPage) {
         this.IplHomePage = qaLoginPage;
-    }
-
-    @Given("I launched IPL application")
-    public void i_launched_IPL_application() throws AWTException {
-       // loginPage = open("stats/2023", LoginPageLogger.class);
     }
 
     @And("User Go to STATS Menu on Top")
@@ -47,5 +48,16 @@ public class IPLHomeStepDefs {
     @And("I fetch the data from stats for UI Screen")
     public void iFetchTheDataFromStatsForUIScreen() {
         IplHomePage.getPlayerStats();
+    }
+
+    @And("I get player name from post request")
+    public void iGetPlayerNameFromPostRequest() {
+        PostRequest postRequest = new PostRequest();
+        System.out.println(postRequest.getPlayer(playersList));
+    }
+
+    @And("I clicked on the player name which we are getting from JSON")
+    public void iClickedOnThePlayerNameWhichWeAreGettingFromJSON() {
+        //IplHomePage.clickOnPlayerName();
     }
 }

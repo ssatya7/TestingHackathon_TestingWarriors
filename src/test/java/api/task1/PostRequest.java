@@ -17,10 +17,12 @@ public class PostRequest {
             .setContentType("application/json")
             .build();
 
-    public void getPlayer(ArrayList<Players> players) {
+
+    public String getPlayer(ArrayList<Players> players) {
         TeamRequest teamRequest = new TeamRequest("Warriors", "BATTERS", players);
         Response response = given().spec(requestSpecification)
                 .body(teamRequest)
                 .when().post("/batter");
+        return response.asPrettyString();
     }
 }
