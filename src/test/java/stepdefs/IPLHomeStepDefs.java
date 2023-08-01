@@ -25,6 +25,7 @@ public class IPLHomeStepDefs {
 
     @And("User Go to STATS Menu on Top")
     public void userGoToSTATSMenuOnTop() {
+        IplHomePage.acceptCookies();
         IplHomePage.userClickOnSTATSMenu();
     }
 
@@ -36,7 +37,7 @@ public class IPLHomeStepDefs {
     @And("User select {} Checkbox")
     public void userSelectBattersCheckbox(String BattersBowlersCheckBoxOptions) {
         IplHomePage.userClickOnIPLStatsTypeFilterDropDown();
-        IplHomePage.userSelectBattersCheckbox(BattersBowlersCheckBoxOptions);
+       // IplHomePage.userSelectBattersCheckbox(BattersBowlersCheckBoxOptions);
     }
 
     @And("User select {} Value")

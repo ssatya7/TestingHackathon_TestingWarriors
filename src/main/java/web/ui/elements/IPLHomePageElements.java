@@ -8,8 +8,8 @@ import static com.codeborne.selenide.Selenide.$;
 public class IPLHomePageElements {
     public final SelenideElement  iplStatsTab = $(By.xpath("//div[@class='site-navbar-wrap']//a[@data-element_text='STATS']"));
     public final SelenideElement  iplSeasonDropDown = $(By.xpath("//div[@class='cSBDisplay ng-binding']"));
-    public final SelenideElement  iplStatsTypeFilterDropDown = $(By.xpath("//div[@class='customSelecBox statsTypeFilter']/div[1]"));
-
+    public final SelenideElement  iplStatsTypeFilterDropDown = $(By.xpath("//div[@class='customSelecBox statsTypeFilter']/div[normalize-space()='Aramco Orange Cap']"));
+    public final SelenideElement acceptCookies = $(By.xpath("//button[normalize-space()='Accept cookies']"));
     public final SelenideElement playerNameFromUI1222 = $(By.xpath("//table[@class='st-table statsTable ng-scope']/tbody/tr[3]"));
 
     public SelenideElement playerNameFromUI( Integer value) {

@@ -6,8 +6,8 @@ Feature: TESTING HACKATHON - TESTING WARRIORS
 
   @Regression @Sanity @BasicSanity @T
   Scenario: [TEST_01] Get Player
-    And User Go to STATS Menu on Top
-    And User assert that Season Tab is selected by default.
-    And User select batters Checkbox
+    Given User Go to STATS Menu on Top
+    Then User assert that Season Tab is selected by default.
+    When User select batters Checkbox
     And User select Most Fours Value
     And I fetch the data from stats for UI Screen

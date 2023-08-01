@@ -31,7 +31,6 @@ public class MyStepdefs {
     @Given("I launched IPL20 website")
     public void i_launched_IPLWebsite() throws AWTException {
         open("", LoginPage.class);
-
     }
 
     @Given("I navigate to Teams tab")
