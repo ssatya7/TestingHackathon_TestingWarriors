@@ -50,8 +50,8 @@ public class IPLHomePage extends BasePage {
         iplHomePageElements.userSelectCSBListValue(cSBListValue).click();
     }
 
-    public List<Players> getPlayerStats() {
-        List<Players> playersList = new ArrayList<>();
+    public ArrayList<Players> getPlayerStats() {
+        ArrayList<Players> playersList = new ArrayList<>();
         List<Integer> fibonacciEvenNumbers = generateFibonacciEvenNumbers(40);
         int size = fibonacciEvenNumbers.size();
         fibonacciEvenNumbers.remove(0);

@@ -1,15 +1,22 @@
 package stepdefs;
 
+import api.task1.PostRequest;
 import com.codeborne.selenide.testng.ScreenShooter;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
+import utils.Players;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 @Listeners({ScreenShooter.class})
 public class IPLHomeStepDefs {
+
+    private ArrayList<Players> playersArrayList = new ArrayList<>();
+    private String playerName;
 
   //  LoginPageLogger loginPage;
     private final web.ui.pages.IPLHomePage IplHomePage;
@@ -47,6 +54,11 @@ public class IPLHomeStepDefs {
 
     @And("I fetch the data from stats for UI Screen")
     public void iFetchTheDataFromStatsForUIScreen() {
-        IplHomePage.getPlayerStats();
+        playersArrayList = IplHomePage.getPlayerStats();
+    }
+
+    @When("I create API Request and send Post call")
+    public void iHitAPICall() {
+      playerName = new PostRequest().getPlayer(playersArrayList);
     }
 }

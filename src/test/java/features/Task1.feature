@@ -11,3 +11,5 @@ Feature: TESTING HACKATHON - TESTING WARRIORS
     When User select batters Checkbox
     And User select Most Fours Value
     And I fetch the data from stats for UI Screen
+    #When I create API Request and send Post call
+    
