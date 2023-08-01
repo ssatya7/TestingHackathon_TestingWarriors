@@ -4,17 +4,12 @@ import api.task2.Team;
 import com.codeborne.selenide.testng.ScreenShooter;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.testng.Assert;
 import org.testng.annotations.Listeners;
-import utils.WebDriverUtils;
 import web.ui.pages.IPLTeamsPage;
 import web.ui.pages.LoginPage;
-import web.ui.pages.QALogin;
 
 import java.awt.*;
-import java.util.ArrayList;
 
 import static com.codeborne.selenide.Selenide.open;
 
@@ -24,6 +19,7 @@ public class MyStepdefs {
     private IPLTeamsPage iplTeamsPage;
     private String nameOfTeam;
     private String trophiesWon;
+
     public MyStepdefs(IPLTeamsPage iplTeamsPage) {
         this.iplTeamsPage = iplTeamsPage;
     }
@@ -55,7 +51,7 @@ public class MyStepdefs {
     @And("I send post request with team details and years of Trophies and validate success response")
     public void sendPostReqAndVerifySuccessResponse() throws AWTException {
         Team team = new Team();
-        trophiesWon.replaceAll(" , ","");
-        team.validateResponseCodeForTrophies(trophiesWon,nameOfTeam);
+        trophiesWon.replaceAll(" , ", "");
+        team.validateResponseCodeForTrophies(trophiesWon, nameOfTeam);
     }
 }
