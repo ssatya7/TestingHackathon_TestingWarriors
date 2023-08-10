@@ -6,6 +6,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.testng.annotations.Listeners;
+import utils.PropertyFileReader;
 import web.ui.pages.IPLTeamsPage;
 import web.ui.pages.LoginPage;
 
@@ -26,6 +27,11 @@ public class MyStepdefs {
 
     @Given("I launched IPL20 website")
     public void i_launched_IPLWebsite() throws AWTException {
+        open("", LoginPage.class);
+    }
+
+    @Given("I launched twitter website and naviagete to stepin_forum")
+    public void i_launched_YTWebsite() throws AWTException {
         open("", LoginPage.class);
     }
 

@@ -4,13 +4,19 @@ import api.task1.PostRequest;
 import com.codeborne.selenide.testng.ScreenShooter;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.apache.commons.io.FileUtils;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import utils.Players;
 
 import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
+
+import static com.codeborne.selenide.Screenshots.takeScreenShotAsFile;
 
 @Listeners({ScreenShooter.class})
 public class IPLHomeStepDefs {
@@ -60,5 +66,12 @@ public class IPLHomeStepDefs {
     @When("I create API Request and send Post call")
     public void iHitAPICall() {
       playerName = new PostRequest().getPlayer(playersArrayList);
+    }
+
+    @Then("I capture Screenshot")
+    public void takeSCS() throws IOException {
+        File destFile = new File("Screenshots/screenshot.png");
+        File srcFile = takeScreenShotAsFile();
+        FileUtils.copyFile(srcFile, destFile);
     }
 }

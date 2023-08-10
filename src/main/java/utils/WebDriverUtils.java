@@ -3,6 +3,7 @@ package utils;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
 import com.google.common.util.concurrent.Uninterruptibles;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 
@@ -104,5 +105,11 @@ public class WebDriverUtils {
         //StringSelection is a class that can be used for copy and paste operations.
         StringSelection stringSelection = new StringSelection(string);
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
+    }
+
+    public static void scrollToEndOfPage() {
+        JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
+        js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        //js.executeScript("window.scrollBy(0,document.body.scrollHeight)", "");
     }
 }

@@ -45,7 +45,8 @@ public abstract class BaseTest extends AbstractTestNGCucumberTests {
         if (urlFromTC != null) {
             System.setProperty("selenide.baseUrl", System.getProperty("baseUrl", urlFromTC));
         } else {
-            System.setProperty("selenide.baseUrl", System.getProperty("baseUrl", PropertyFileReader.get("url")));
+            System.setProperty("selenide.baseUrl", System.getProperty("baseUrl", PropertyFileReader.get("twitterURL")));
+            //System.setProperty("selenide.baseUrl", System.getProperty("baseUrl", PropertyFileReader.get("url")));
         }
         System.setProperty("selenide.userName", System.getProperty("userName", PropertyFileReader.get("userName")));
         System.setProperty("selenide.password", System.getProperty("password", PropertyFileReader.get("password")));
