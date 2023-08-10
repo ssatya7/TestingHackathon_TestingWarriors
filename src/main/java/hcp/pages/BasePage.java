@@ -1,4 +1,4 @@
-package web.ui.pages;
+package hcp.pages;
 
 import com.codeborne.selenide.impl.SelenidePageFactory;
 
