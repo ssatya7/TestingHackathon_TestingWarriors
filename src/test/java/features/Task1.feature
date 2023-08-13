@@ -4,7 +4,7 @@ Feature: TESTING HACKATHON - TESTING WARRIORS
   Background:
     Given I launched IPL20 website
 
-  @Regression @Sanity @BasicSanity @T
+  @Regression @Sanity @BasicSanity
   Scenario: [TEST_01] Get Player
     Given User Go to STATS Menu on Top
     Then User assert that Season Tab is selected by default.

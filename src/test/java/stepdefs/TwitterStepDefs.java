@@ -7,6 +7,11 @@ import io.cucumber.java.en.When;
 import org.testng.annotations.Listeners;
 import web.ui.pages.TwitterPage;
 
+import java.awt.*;
+
+import static utils.WebDriverUtils.scrollToTopOfPage;
+import static utils.WebDriverUtils.zoomOutBrowser;
+
 @Listeners({ScreenShooter.class})
 public class TwitterStepDefs {
 
@@ -20,13 +25,17 @@ public class TwitterStepDefs {
 
     @When("I Extract highest used Hashtag from top 50 tweets")
     public void iExtractHashtag() {
-
+        //twitterPage.navToStepIN();
+        String mostUsedHashTag = twitterPage.getMostUsedHashTagFromStepInForun();
     }
 
     @When("I scroll down till top 50 tweets are displayed")
-    public void iScroolDownTill50TweetsAreDisplayed() {
+    public void iScroolDownTill50TweetsAreDisplayed() throws AWTException {
         twitterPage.navToStepINForum();
-        twitterPage.scrollTill50TweetsAreDisplayed();
+        zoomOutBrowser();
+        zoomOutBrowser();
+        zoomOutBrowser();
+      //  twitterPage.scrollTill50TweetsAreDisplayed();
     }
 
     @And("I Extract tweet with most {} from top 50 tweets")
@@ -34,6 +43,7 @@ public class TwitterStepDefs {
         if (actionItem.equals("retweets")) {
             mostRetweetedTweet = twitterPage.getMostRetweetedTweet();
         } else {
+            twitterPage.navToStepIN();
             mostLikedTweet = twitterPage.getMostLikedTweet();
         }
     }

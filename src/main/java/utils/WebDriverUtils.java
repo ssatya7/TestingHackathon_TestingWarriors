@@ -111,5 +111,13 @@ public class WebDriverUtils {
         JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
         js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         //js.executeScript("window.scrollBy(0,document.body.scrollHeight)", "");
+        waitUntilPageLoads(3);
+    }
+
+    public static void scrollToTopOfPage() {
+        JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
+        js.executeScript("window.scrollTo(0, 0)");
+        //js.executeScript("window.scrollBy(0,document.body.scrollHeight)", "");
+        waitUntilPageLoads(3);
     }
 }

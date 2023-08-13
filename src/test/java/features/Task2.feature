@@ -4,7 +4,7 @@ Feature: TESTING HACKATHON - Task 2
   Background:
     Given I launched IPL20 website
 
-  @Regression @Sanity @BasicSanity @T
+  @Regression @Sanity @BasicSanity
   Scenario: Team with Trophies
     Given I navigate to Teams tab
     When I hit IPL20 teams endpoint and retrieve team name
