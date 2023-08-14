@@ -14,5 +14,6 @@ public class TwitterElements {
     userName = $(By.xpath("//*[@autocomplete='username']")),
     password = $(By.xpath("//*[@autocomplete='current-password']")),
     mobileInput = $(By.xpath("//*[@data-testid='ocfEnterTextTextInput']")),
-    forumId = $(By.xpath("//span[normalize-space()='@stepin_forum']"));
+    forumId = $(By.xpath("//span[normalize-space()='@stepin_forum']")),
+    youMightLikeSection = $(By.xpath("//span[normalize-space()='You might like']"));
 }

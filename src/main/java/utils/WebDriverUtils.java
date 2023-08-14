@@ -50,9 +50,7 @@ public class WebDriverUtils {
     }
 
     public static void zoomInBrowser() throws AWTException {
-        System.out.println("zooming");
         Robot robot = new Robot();
-        System.out.println("About to zoom in");
         robot.keyPress(KeyEvent.VK_CONTROL);
         robot.keyPress(KeyEvent.VK_ADD);
         robot.keyRelease(KeyEvent.VK_ADD);
@@ -60,9 +58,7 @@ public class WebDriverUtils {
     }
 
     public static void zoomOutBrowser() throws AWTException {
-        System.out.println("zooming");
         Robot robot = new Robot();
-        System.out.println("About to zoom out");
         robot.keyPress(KeyEvent.VK_CONTROL);
         robot.keyPress(KeyEvent.VK_SUBTRACT);
         robot.keyRelease(KeyEvent.VK_SUBTRACT);

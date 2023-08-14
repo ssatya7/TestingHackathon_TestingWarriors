@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.Players;
 import web.ui.elements.IPLHomePageElements;
 import web.ui.elements.TwitterElements;
+import web.ui.model.TwitterProfile;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -170,8 +171,8 @@ public class TwitterPage extends BasePage {
             scrollToEndOfPage();
         }
         int maxUsedHashTagCount = Collections.max(hashTagMap.values());
-        for(Map.Entry<String,Integer> entry : hashTagMap.entrySet()){
-            if(entry.getValue()==maxUsedHashTagCount){
+        for (Map.Entry<String, Integer> entry : hashTagMap.entrySet()) {
+            if (entry.getValue() == maxUsedHashTagCount) {
                 mostUsedHashTag = entry.getKey();
                 System.out.println("MostUsedHashTagIs -" + entry.getKey());
             }
@@ -181,9 +182,9 @@ public class TwitterPage extends BasePage {
 
     private HashMap<String, Integer> getHashTagCountForTweets(ElementsCollection tweetTexts) {
         for (SelenideElement tweet : tweetTexts) {
-            getHashTagsFromTweet(tweet.getText()).stream().forEach(e->{
-                hashTagMap.computeIfAbsent(e,v->1);
-                hashTagMap.computeIfPresent(e,(k,v)->v+1);
+            getHashTagsFromTweet(tweet.getText()).stream().forEach(e -> {
+                hashTagMap.computeIfAbsent(e, v -> 1);
+                hashTagMap.computeIfPresent(e, (k, v) -> v + 1);
             });
         }
         return hashTagMap;
@@ -191,5 +192,25 @@ public class TwitterPage extends BasePage {
 
     private List<String> getHashTagsFromTweet(String tweetText) {
         return Arrays.stream(tweetText.split(" ")).filter(e -> e.startsWith("#")).collect(Collectors.toList());
+    }
+
+    public ArrayList<TwitterProfile> getTwitterProfilesToFollow() {
+        twitterElements.youMightLikeSection.scrollIntoView(true);
+        ArrayList<TwitterProfile> profiles = new ArrayList<>();
+        ElementsCollection twitterNames = $$(By.xpath("//*[@data-testid='UserCell']/descendant::span/span[1][not(text()='Follow')]"));
+        ElementsCollection twitterHandles = $$(By.xpath("//*[@data-testid='UserCell']//a//span[contains(text(),'@')]"));
+        for (int i = 0; i < twitterHandles.size(); i++) {
+            String handle = twitterHandles.get(i).getText().replace("@", "").trim();
+            String name = twitterNames.get(i).getText();
+            twitterNames.get(i).hover();
+            waitUntilPageLoads(2);
+            profiles.add(new TwitterProfile(name, handle,
+                    $(By.xpath("//a[contains(@href,'" + handle + "')]//span[contains(text(),'Following')]/parent::*/preceding-sibling::span")).getText(),
+                    $(By.xpath("//a[contains(@href,'" + handle + "')]//span[contains(text(),'Followers')]/parent::*/preceding-sibling::span")).getText()));
+
+            twitterElements.youMightLikeSection.hover();
+            waitUntilPageLoads(2);
+        }
+        return profiles;
     }
 }

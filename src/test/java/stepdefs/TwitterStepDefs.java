@@ -5,9 +5,11 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.testng.annotations.Listeners;
+import web.ui.model.TwitterProfile;
 import web.ui.pages.TwitterPage;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 import static utils.WebDriverUtils.scrollToTopOfPage;
 import static utils.WebDriverUtils.zoomOutBrowser;
@@ -46,5 +48,17 @@ public class TwitterStepDefs {
             twitterPage.navToStepIN();
             mostLikedTweet = twitterPage.getMostLikedTweet();
         }
+    }
+
+    @And("I Extract first 3 ppl details on who to follow suggestions")
+    public void iExtractFirst3PPLDetails() {
+        //twitterPage.navToStepIN();
+        ArrayList<TwitterProfile> pplToFollow = twitterPage.getTwitterProfilesToFollow();
+        pplToFollow.stream().forEach(e->{
+            System.out.println("Name - " + e.getName());
+            System.out.println("Handle - " + e.getHandleName());
+            System.out.println("Followers Count - " + e.getFollowersCount());
+            System.out.println("Following Count - " + e.getFollowingCount());
+        });
     }
 }
